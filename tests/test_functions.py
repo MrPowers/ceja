@@ -27,3 +27,9 @@ def test_metaphone():
     assert_column_equality(actual_df, "word_metaphone", "expected")
 
 
+def test_jaro_distance():
+    data = [("jellyfish", "smellyfish", "JLFX"), ("li", "lee", "L"), ("luisa", "bruna", "LS"), (None, None, None)]
+    df = spark.createDataFrame(data, ["word1", "word2", "expected"])
+    actual_df = df.withColumn("word_jaro_distance", C.jaro_distance(col("word1"), col("word2")))
+    actual_df.show()
+    # assert_column_equality(actual_df, "word_jaro_distance", "expected")
