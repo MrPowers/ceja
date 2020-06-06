@@ -5,5 +5,10 @@ import jellyfish as J
 
 @udf(returnType=StringType())
 def nysiis(s):
-     return J.nysiis(s)
+     return None if s == None else J.nysiis(s)
+
+@udf(returnType=StringType())
+def metaphone(s):
+     return None if s == None else J.metaphone(s)
+
 
