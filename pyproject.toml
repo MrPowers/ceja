@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "ceja"
+version = "0.0.1"
+description = "PySpark string and phonetic matching"
+authors = ["MrPowers <matthewkevinpowers@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pyspark = "^2.4.6"
+jellyfish = "^0.8.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
