@@ -11,7 +11,7 @@ jellyfish = "^0.8.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
-chispa = "^0.2.1"
+chispa = "^0.3.0"
 
 [build-system]
 requires = ["poetry>=0.12"]

@@ -27,7 +27,7 @@ description = "Pyspark test helper library"
 name = "chispa"
 optional = false
 python-versions = ">=3.6,<4.0"
-version = "0.2.1"
+version = "0.3.0"
 
 [package.dependencies]
 PrettyTable = ">=0.7.2,<0.8.0"
@@ -206,7 +206,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "d110aeed9dd5989c0166fd9e0c5a391d1a0c65cd45181ac85e3a16deb8cafa51"
+content-hash = "bbac4830238e5a7bcd5f51012e9178e8c49053640f2a9fe019c1d2a0d6e947c4"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -219,8 +219,8 @@ attrs = [
     {file = "attrs-19.3.0.tar.gz", hash = "sha256:f7b7ce16570fe9965acd6d30101a28f62fb4a7f9e926b3bbc9b61f8b04247e72"},
 ]
 chispa = [
-    {file = "chispa-0.2.1-py3-none-any.whl", hash = "sha256:0e73e6144d7e006ef4f1f30f988bffd2bddded4c865116d0ee4b99f66be91b7c"},
-    {file = "chispa-0.2.1.tar.gz", hash = "sha256:a99a9305caf9238ff5c48de94f2f8525dc78949d23e8cbb955a2961ba72f9b0e"},
+    {file = "chispa-0.3.0-py3-none-any.whl", hash = "sha256:51aac15e49aa5c8c31b8a51df514b4c900f128ffa72fc6b5a2ec60474f81b44a"},
+    {file = "chispa-0.3.0.tar.gz", hash = "sha256:2523fa133d23a1ec95ca8103f4f7af9758b8d5bdf4e815af85619122acc9f797"},
 ]
 colorama = [
     {file = "colorama-0.4.3-py2.py3-none-any.whl", hash = "sha256:7d73d2a99753107a36ac6b455ee49046802e59d9d076ef8e47b61499fa29afff"},
