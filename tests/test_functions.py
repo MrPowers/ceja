@@ -21,6 +21,7 @@ SparkSession.create_df = create_df
 
 import pytest
 from pyspark.sql.functions import col
+
 import ceja
 from chispa.column_comparer import assert_column_equality, assert_approx_column_equality
 
@@ -42,6 +43,8 @@ def test_metaphone():
         ("jellyfish", "JLFX"),
         ("li", "L"),
         ("luisa", "LS"),
+        ("Klumpz", "KLMPS"),
+        ("Clumps", "KLMPS"),
         (None, None)
     ]
     df = spark.createDataFrame(data, ["word", "expected"])
