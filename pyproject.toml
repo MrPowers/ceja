@@ -5,8 +5,8 @@ description = "PySpark string and phonetic matching"
 authors = ["MrPowers <matthewkevinpowers@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
-pyspark = "^2.4.6"
+python = ">2.7"
+pyspark = ">2.0.0"
 jellyfish = "^0.8.2"
 
 [tool.poetry.dev-dependencies]
