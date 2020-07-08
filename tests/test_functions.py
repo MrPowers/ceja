@@ -21,7 +21,7 @@ SparkSession.create_df = create_df
 
 import pytest
 from pyspark.sql.functions import col
-import ceja.functions as C
+import ceja
 from chispa.column_comparer import assert_column_equality, assert_approx_column_equality
 
 
@@ -33,7 +33,7 @@ def test_nysiis():
         (None, None)
     ]
     df = spark.createDataFrame(data, ["word", "expected"])
-    actual_df = df.withColumn("word_nysiis", C.nysiis(col("word")))
+    actual_df = df.withColumn("word_nysiis", ceja.nysiis(col("word")))
     assert_column_equality(actual_df, "word_nysiis", "expected")
 
 
@@ -45,7 +45,7 @@ def test_metaphone():
         (None, None)
     ]
     df = spark.createDataFrame(data, ["word", "expected"])
-    actual_df = df.withColumn("word_metaphone", C.metaphone(col("word")))
+    actual_df = df.withColumn("word_metaphone", ceja.metaphone(col("word")))
     assert_column_equality(actual_df, "word_metaphone", "expected")
 
 
@@ -57,7 +57,7 @@ def test_match_rating_codex():
         (None, None)
     ]
     df = spark.createDataFrame(data, ["word", "expected"])
-    actual_df = df.withColumn("word_match_rating_codex", C.match_rating_codex(col("word")))
+    actual_df = df.withColumn("word_match_rating_codex", ceja.match_rating_codex(col("word")))
     assert_column_equality(actual_df, "word_match_rating_codex", "expected")
 
 
@@ -69,7 +69,7 @@ def test_porter_stem():
         (None, None)
     ]
     df = spark.createDataFrame(data, ["word", "expected"])
-    actual_df = df.withColumn("word_porter_stem", C.porter_stem(col("word")))
+    actual_df = df.withColumn("word_porter_stem", ceja.porter_stem(col("word")))
     assert_column_equality(actual_df, "word_porter_stem", "expected")
 
 
@@ -84,7 +84,7 @@ def test_damerau_levenshtein_distance():
         data,
         [("word1", StringType(), True), ("word2", StringType(), True), ("expected", IntegerType(), True)]
     )
-    actual_df = df.withColumn("word_damerau_levenshtein_distance", C.damerau_levenshtein_distance(col("word1"), col("word2")))
+    actual_df = df.withColumn("word_damerau_levenshtein_distance", ceja.damerau_levenshtein_distance(col("word1"), col("word2")))
     assert_column_equality(actual_df, "word_damerau_levenshtein_distance", "expected")
 
 
@@ -96,7 +96,7 @@ def test_hamming_distance():
         (None, None, None)
     ]
     df = spark.createDataFrame(data, ["word1", "word2", "expected"])
-    actual_df = df.withColumn("word_hamming_distance", C.hamming_distance(col("word1"), col("word2")))
+    actual_df = df.withColumn("word_hamming_distance", ceja.hamming_distance(col("word1"), col("word2")))
     assert_column_equality(actual_df, "word_hamming_distance", "expected")
 
 
@@ -109,7 +109,7 @@ def test_jaro_similarity():
         (None, None, None)
     ]
     df = spark.createDataFrame(data, ["word1", "word2", "expected"])
-    actual_df = df.withColumn("word_jaro_distance", C.jaro_similarity(col("word1"), col("word2")))
+    actual_df = df.withColumn("word_jaro_distance", ceja.jaro_similarity(col("word1"), col("word2")))
     assert_approx_column_equality(actual_df, "word_jaro_distance", "expected", 0.01)
 
 
@@ -121,7 +121,7 @@ def test_jaro_winkler_similarity():
         (None, None, None)
     ]
     df = spark.createDataFrame(data, ["word1", "word2", "expected"])
-    actual_df = df.withColumn("word_jaro_winkler_similarity", C.jaro_winkler_similarity(col("word1"), col("word2")))
+    actual_df = df.withColumn("word_jaro_winkler_similarity", ceja.jaro_winkler_similarity(col("word1"), col("word2")))
     assert_approx_column_equality(actual_df, "word_jaro_winkler_similarity", "expected", 0.01)
 
 
@@ -133,6 +133,6 @@ def test_match_rating_comparison():
         (None, None, None)
     ]
     df = spark.createDataFrame(data, ["word1", "word2", "expected"])
-    actual_df = df.withColumn("word_match_rating_comparison", C.match_rating_comparison(col("word1"), col("word2")))
+    actual_df = df.withColumn("word_match_rating_comparison", ceja.match_rating_comparison(col("word1"), col("word2")))
     assert_column_equality(actual_df, "word_match_rating_comparison", "expected")
 
