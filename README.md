@@ -54,12 +54,12 @@ actual_df.show()
 
 ```python
 data = [
-("jellyfish",),
-("li",),
-("luisa",),
-("Klumpz",),
-("Clumps",),
-(None,)
+    ("jellyfish",),
+    ("li",),
+    ("luisa",),
+    ("Klumpz",),
+    ("Clumps",),
+    (None,)
 ]
 df = spark.createDataFrame(data, ["word"])
 actual_df = df.withColumn("word_metaphone", ceja.metaphone(col("word")))
@@ -82,16 +82,15 @@ actual_df.show()
 ### Match rating codex
 
 ```python
-def test_match_rating_codex():
-    data = [
-        ("jellyfish",),
-        ("li",),
-        ("luisa",),
-        (None,)
-    ]
-    df = spark.createDataFrame(data, ["word"])
-    actual_df = df.withColumn("word_match_rating_codex", ceja.match_rating_codex(col("word")))
-    actual_df.show()
+data = [
+    ("jellyfish",),
+    ("li",),
+    ("luisa",),
+    (None,)
+]
+df = spark.createDataFrame(data, ["word"])
+actual_df = df.withColumn("word_match_rating_codex", ceja.match_rating_codex(col("word")))
+actual_df.show()
 ```
 
 ```
