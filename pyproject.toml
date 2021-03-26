@@ -6,10 +6,10 @@ authors = ["MrPowers <matthewkevinpowers@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = ">3.4"
-pyspark = ">2.0.0"
 jellyfish = "^0.8.2"
 
 [tool.poetry.dev-dependencies]
+pyspark = ">2.0.0"
 pytest = "3.2.2"
 chispa = "^0.6.0"
 
