@@ -1,5 +1,9 @@
 # ceja
 
+![![image](https://github.com/MrPowers/ceja/workflows/build/badge.svg)](https://github.com/MrPowers/ceja/actions/workflows/ci.yml/badge.svg)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/ceja)
+[![PyPI version](https://badge.fury.io/py/ceja.svg)](https://badge.fury.io/py/ceja)
+
 PySpark phonetic, stemming, and string matching algorithms.  Use the power of PySpark to run these algos on massive datasets!
 
 ## Installation and basic usage
